@@ -1,6 +1,7 @@
 const chalk = require('chalk')
+const client = require('../fhenix-utils/provider')
 
-function list() {
+async function list() {
     console.log(chalk.white.bold('List of poker commands'))
     console.log('-----------------------')
     console.log(chalk.green.bold('create') + ' --> Create a new poker game')
