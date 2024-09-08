@@ -16,8 +16,8 @@ const createTx = (method, args) => {
 
 const sendTx = async (tx) => {
     if (!privateKey || !wallet || !tx) return;
-    const response = wallet.sendTransaction(tx);
-    await response.wait();
+    const response = await wallet.sendTransaction(tx);
+    return await response.wait().then(() => response.hash);
 }
 
 module.exports = {
